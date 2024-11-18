@@ -1,0 +1,51 @@
+10
+Estruturas de Dados em Ação
+978-1234567890
+89.90
+9
+TechBooks
+Algoritmos Descomplicados
+978-0987654321
+59.90
+8
+CodePress
+Introdução à Programação
+978-1111111111
+45.00
+7
+LearnBooks
+Engenharia de Software Moderna
+978-2222222222
+120.50
+10
+DevPress
+Banco de Dados: Teoria e Prática
+978-3333333333
+75.90
+8
+DataBooks
+Padrões de Projeto Avançados
+978-4444444444
+99.90
+9
+DesignPress
+Redes de Computadores Simplificadas
+978-5555555555
+65.90
+8
+NetBooks
+Sistemas Operacionais Essenciais
+978-6666666666
+85.00
+7
+SysBooks
+Inteligência Artificial Aplicada
+978-7777777777
+110.00
+10
+AIBooks
+Computação em Nuvem na Prática
+978-8888888888
+95.50
+9
+CloudBooks

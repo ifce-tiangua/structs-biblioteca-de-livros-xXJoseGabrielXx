@@ -1,0 +1,11 @@
+2
+Estruturas de Dados em Ação
+978-1234567890
+89.90
+9
+TechBooks
+Algoritmos Descomplicados
+978-0987654321
+59.90
+8
+CodePress
