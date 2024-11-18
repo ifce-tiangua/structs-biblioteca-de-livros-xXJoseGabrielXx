@@ -1,0 +1,50 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Testando inputs
+      id: testando-inputs
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Testando inputs
+        setup-command: ''
+        command: make test-inputs
+        timeout: 2
+        max-score: 7
+    - name: Testando alocação
+      id: testando-alocacao
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Testando alocação
+        setup-command: ''
+        command: make test-alloc
+        timeout: 1
+        max-score: 1
+    - name: Testando uso de struct
+      id: testando-uso-de-struct
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Testando uso de struct
+        setup-command: ''
+        command: make test-struct
+        timeout: 1
+        max-score: 2
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        TESTANDO-INPUTS_RESULTS: "${{steps.testando-inputs.outputs.result}}"
+        TESTANDO-ALOCACAO_RESULTS: "${{steps.testando-alocacao.outputs.result}}"
+        TESTANDO-USO-DE-STRUCT_RESULTS: "${{steps.testando-uso-de-struct.outputs.result}}"
+      with:
+        runners: testando-inputs,testando-alocacao,testando-uso-de-struct
