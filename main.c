@@ -51,7 +51,7 @@ void mostrar_livros(pLivro livros, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
         printf("\nLivro %d:\n", i + 1);
         printf("Título: %s\n", livros[i].titulo);
-        printf("ISBN: %s\n", livros[i].codigoISBN)
+        printf("ISBN: %s\n", livros[i].codigoISBN);
         printf("Preço: R$ %.2f\n", livros[i].valor);
         printf("Avaliação: %d\n", livros[i].avaliacao)
         printf("Editora: %s\n", livros[i].publicadora);
@@ -76,7 +76,7 @@ int main() {
 
         preencher_livros(livros, quantidade);
         mostrar_livros(livros, quantidade);
-        liberar_livros(livros)
+        liberar_livros(livros);
     }
 
     return 0;
