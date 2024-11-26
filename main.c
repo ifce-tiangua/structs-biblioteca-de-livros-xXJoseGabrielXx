@@ -13,8 +13,7 @@ typedef struct {
 } Livro, *pLivro;
 
 pLivro alocar_livros(int quantidade) {
-    pLivro ptrLivros = (pLivro)malloc(quantidade * sizeof(Livro));
-    return ptrLivros;
+    return (pLivro)malloc(quantidade * sizeof(Livro));
 }
 
 void limpar_input() {
@@ -24,11 +23,11 @@ void limpar_input() {
 
 void preencher_livros(pLivro livros, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
-        printf("Digite os dados do livro %d:\n", i + 1);
+        printf("Livro %d:\n", i + 1);
 
         printf("Título: ");
         fgets(livros[i].titulo, TAM_MAX, stdin);
-        livros[i].titulo[strcspn(livros[i].titulo, "\n")] = '\0'; // Remove o '\n'
+        livros[i].titulo[strcspn(livros[i].titulo, "\n")] = '\0';
 
         printf("ISBN: ");
         fgets(livros[i].codigoISBN, TAM_MAX, stdin);
@@ -49,12 +48,15 @@ void preencher_livros(pLivro livros, int quantidade) {
 
 void mostrar_livros(pLivro livros, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
-        printf("\nLivro %d:\n", i + 1);
+        printf("Livro %d:\n", i + 1);
         printf("Título: %s\n", livros[i].titulo);
         printf("ISBN: %s\n", livros[i].codigoISBN);
-        printf("Preço: R$ %.2f\n", livros[i].valor);
+        printf("Preço: %.2f\n", livros[i].valor);
         printf("Avaliação: %d\n", livros[i].avaliacao);
         printf("Editora: %s\n", livros[i].publicadora);
+        if (i < quantidade - 1) {
+            printf("\n"); // Evita uma linha extra após o último livro
+        }
     }
 }
 
@@ -81,3 +83,4 @@ int main() {
 
     return 0;
 }
+
