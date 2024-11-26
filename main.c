@@ -53,7 +53,7 @@ void mostrar_livros(pLivro livros, int quantidade) {
         printf("Título: %s\n", livros[i].titulo);
         printf("ISBN: %s\n", livros[i].codigoISBN);
         printf("Preço: R$ %.2f\n", livros[i].valor);
-        printf("Avaliação: %d\n", livros[i].avaliacao)
+        printf("Avaliação: %d\n", livros[i].avaliacao);
         printf("Editora: %s\n", livros[i].publicadora);
     }
 }
