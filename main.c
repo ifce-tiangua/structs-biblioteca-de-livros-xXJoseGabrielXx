@@ -25,7 +25,7 @@ void preencher_livros(pLivro livros, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
         printf("Livro %d:\n", i + 1);
 
-        printf("Título: ");
+        printf("Nome: ");
         fgets(livros[i].titulo, TAM_MAX, stdin);
         livros[i].titulo[strcspn(livros[i].titulo, "\n")] = '\0';
 
@@ -36,7 +36,7 @@ void preencher_livros(pLivro livros, int quantidade) {
         printf("Preço: ");
         scanf("%f", &livros[i].valor);
 
-        printf("Avaliação (0-5): ");
+        printf("Score: ");
         scanf("%d", &livros[i].avaliacao);
         limpar_input();
 
@@ -49,13 +49,13 @@ void preencher_livros(pLivro livros, int quantidade) {
 void mostrar_livros(pLivro livros, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
         printf("Livro %d:\n", i + 1);
-        printf("Título: %s\n", livros[i].titulo);
+        printf("Nome: %s\n", livros[i].titulo);
         printf("ISBN: %s\n", livros[i].codigoISBN);
-        printf("Preço: %.2f\n", livros[i].valor);
-        printf("Avaliação: %d\n", livros[i].avaliacao);
+        printf("Preço: R$ %.2f\n", livros[i].valor);
+        printf("Score: %d\n", livros[i].avaliacao);
         printf("Editora: %s\n", livros[i].publicadora);
         if (i < quantidade - 1) {
-            printf("\n"); // Evita uma linha extra após o último livro
+            printf("\n");
         }
     }
 }
@@ -83,4 +83,3 @@ int main() {
 
     return 0;
 }
-
